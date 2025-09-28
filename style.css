@@ -1,0 +1,152 @@
+body {
+    background-color: #fff0f5; /* Màu hồng phấn nhẹ nhàng */
+    font-family: 'Arial Rounded MT Bold', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+    overflow: hidden;
+    color: #4a4a4a;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.5); /* Bóng đổ màu hồng */
+    max-width: 550px;
+    width: 90%;
+    border: 3px solid #ff69b4; /* Viền hồng */
+    z-index: 10;
+}
+
+.main-title {
+    color: #ff007f;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* === Trang Mở Đầu (index.html) === */
+.intro-image {
+    max-width: 90%;
+    height: auto;
+    border-radius: 15px;
+    margin: 20px 0;
+    border: 4px solid #ff007f;
+}
+.intro-text {
+    font-size: 1.1em;
+    padding: 0 10px;
+}
+
+/* === Các Nút Hành Động Chung === */
+.action-button {
+    background-color: #ff007f;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    font-size: 1.2em;
+    border-radius: 40px;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.3s, transform 0.1s;
+    font-weight: bold;
+}
+.action-button:hover { background-color: #d81b60; }
+
+
+/* === Trang Tỏ Tình (confession.html) === */
+.reveal-image { max-width: 90%; height: auto; border-radius: 15px; margin: 20px 0; border: 4px solid #f06292; }
+.final-text { font-size: 1.1em; }
+.final-message-box { 
+    font-size: 1.3em; 
+    font-weight: bold;
+    padding: 15px;
+    border: 2px solid #ff69b4;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+.status-text {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #ff007f;
+    margin-top: 15px;
+}
+
+/* Khu vực Nút Quyết Định */
+#decision-area {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+    position: relative; 
+}
+.decision-button {
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out; 
+    z-index: 20; 
+}
+.yes-btn { 
+    background-color: #4CAF50; 
+    color: white; 
+    z-index: 30 !important; /* Đảm bảo nút YES nằm trên nút NO khi to */
+}
+.no-btn { 
+    background-color: #f44336; 
+    color: white; 
+    z-index: 10; 
+    /* Nút NO cần z-index thấp để bị che */
+}
+
+/* Khu vực Meme */
+#meme-area {
+    margin-bottom: 20px;
+    margin-top: -10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.meme-image {
+    max-width: 180px; 
+    border-radius: 10px;
+    border: 3px solid #ff007f;
+}
+.hidden { display: none; }
+
+
+/* === HIỆU ỨNG TRÁI TIM KHI CLICK (Touch Heart) === */
+.touch-heart {
+    position: absolute;
+    color: #ff007f; 
+    font-size: 2em;
+    animation: popAndFade 1s forwards;
+    pointer-events: none;
+    z-index: 1000;
+}
+@keyframes popAndFade {
+    0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
+}
+
+
+/* === HIỆU ỨNG TRÁI TIM BAY LÊN (Floating Heart) === */
+#heart-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 5; }
+.floating-heart {
+    position: absolute;
+    color: #ffc0cb; 
+    font-size: 20px;
+    animation: floatUp 20s linear infinite; /* Chậm rãi */
+    opacity: 0;
+    pointer-events: none;
+}
+@keyframes floatUp {
+    0% { transform: translateY(100vh) scale(0); opacity: 0; }
+    10% { opacity: 1; transform: scale(1); }
+    100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+}
