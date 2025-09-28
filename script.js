@@ -122,7 +122,7 @@ function showFinalScreen2D() {
     
     // Thêm Text Kết Thúc
     const h1 = document.createElement('h1');
-    h1.innerText = 'CHÚNG MỪNG ✨';
+    h1.innerText = 'CHÚC MỪNG ✨';
     h1.style.color = '#fff';
     h1.style.position = 'fixed';
     h1.style.top = '50%';
